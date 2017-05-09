@@ -1,11 +1,12 @@
 <!--index.wxml-->
 <view class="container">
+<view class="panel">
   <view class="menu">
-  <text>主食</text>
-  <text>肉菜</text>
-  <text>素菜</text>
-  <text>饺子</text>
-  <text>汤</text>
+  <text class="menuItem">主食</text>
+  <text class="menuItem">肉菜</text>
+  <text class="menuItem">素菜</text>
+  <text class="menuItem">饺子</text>
+  <text class="menuItem">汤</text>
   </view>
   <view class="submenu">
   <text>香菇猪肉饺子</text>
@@ -17,4 +18,5 @@
   <text>荠菜猪肉饺子</text>
   <text>白菜猪肉饺子</text>
   </view>
+</view>
 </view>

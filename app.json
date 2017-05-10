@@ -1,12 +1,30 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/order/order"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#11c1ae",
+    "navigationBarTitleText": "店小儿来也",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#fff",
+    "borderStyle": "black",
+    "backgroundColor": "#11c1ae",
+    "position": "top",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "点菜"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "汇总"
+      }
+    ]
   }
 }

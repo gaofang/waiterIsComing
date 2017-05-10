@@ -1,21 +1,86 @@
 /**index.wxss**/
 .panel {
-  display: flex;
-  flex-wrap: nowrap;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
 }
 .menu {
-  width: 160rpx;
+  width: 18%;
   text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #eee;
+  box-shadow: 2px 0 10px #eee;
+  background-color: #fff;
+  height: 100%;
 }
 .menuItem {
+  font-size: 36rpx;
   text-align: center;
-  padding: 20rpx 0;
-  border-bottom: 1px solid #eee;
+  padding: 36rpx 0;
+  border-bottom: 1px solid #f1f1f1;
 }
 .submenu {
-  width: 300rpx;
+  width: 78%;
+  margin-left: 20%;
   display: flex;
   flex-direction: column;
+  padding: 20rpx 0;
+  background-color: #fff;
+  height: 100%;
+}
+.subItem {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 20rpx;
+  margin: 6rpx 0;
+  position: relative;
+}
+.subItem .dishName {
+  display: block;
+  margin-bottom: 36rpx;
+  font-size: 34rpx;
+}
+.subItem .dishPrice {
+  color: chocolate;
+  font-size: 32rpx;
+}
+.subItem .action {
+  width: 140rpx;
+  height: 48rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subItem .count {
+  font-size: 30rpx;
+  color: #333;
+}
+.subItem image {
+  width: 42rpx;
+  height: 42rpx;
+}
+.cart {
+  position: absolute;
+  left: 24rpx;
+  bottom: 40rpx;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #999;
+}
+.option {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 20rpx;
+  width: 100%;
+  background-color: red;
 }

@@ -1,22 +1,77 @@
 <!--index.wxml-->
 <view class="container">
-<view class="panel">
-  <view class="menu">
-  <text class="menuItem">主食</text>
-  <text class="menuItem">肉菜</text>
-  <text class="menuItem">素菜</text>
-  <text class="menuItem">饺子</text>
-  <text class="menuItem">汤</text>
+  <view class="panel">
+    <view class="menu">
+      <text class="menuItem" style="color:{{activeIdx == idx ? '#11c1ae' : '#333'}}" wx:for="{{menu}}" wx:for-index="idx" wx:item="item" bindtap="chooseClass" data-index="{{idx}}">{{item.cuisineName}}</text>
+      <image src="../../img/cart.png" class="cart"></image>
+    </view>
+    <scroll-view class="submenu" scroll-y>
+      <view class="subItem" wx:for="{{subMenu}}" wx:fo-indexr="index" wx:item="item">
+        <text class="dishName">{{item.name}}</text>
+        <text class="dishPrice">￥{{item.price}}</text>
+        <view class="action">
+          <image src="../../img/sub.png"></image>
+          <text class="count">1</text>
+          <image src="../../img/add.png" bindtap=""></image>
+        </view>
+      </view>
+      <!--<view class="subItem">
+        <text class="dishName">荠菜猪肉饺子</text>
+        <text class="dishPrice">￥16</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">白菜猪肉饺子</text>
+        <text class="dishPrice">￥14</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">白菜猪肉饺子</text>
+        <text class="dishPrice">￥14</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>
+      <view class="subItem">
+        <text class="dishName">香菇猪肉饺子</text>
+        <text class="dishPrice">￥20</text>
+        <image src="../../img/add.png"></image>
+      </view>-->
+    </scroll-view>
   </view>
-  <view class="submenu">
-  <text>香菇猪肉饺子</text>
-  <text>韭菜猪肉饺子</text>
-  <text>荠菜猪肉饺子</text>
-  <text>白菜猪肉饺子</text>
-  <text>荠菜猪肉饺子</text>
-  <text>白菜猪肉饺子</text>
-  <text>荠菜猪肉饺子</text>
-  <text>白菜猪肉饺子</text>
-  </view>
-</view>
+  <!--<view class="option"></view>-->
 </view>

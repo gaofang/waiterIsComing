@@ -22,7 +22,7 @@
     <view class="orderPanel">
       <view class="orderTitle">
         <view>已点</view>
-        <view>清空</view>
+        <view bindtap="reset">清空</view>
       </view>
       <scroll-view class="orderList" scroll-y>
         <view class="orderItem" wx:for="{{gather}}" wx:item="item">

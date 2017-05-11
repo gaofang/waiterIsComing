@@ -86,7 +86,6 @@
   height: 88rpx;
   border-radius: 50%;
   box-shadow: 0 0 10px #999;
-  z-index: 99;
 }
 
 .orderBox {
@@ -96,6 +95,7 @@
   right: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9;
 }
 
 .orderPanel {
@@ -114,7 +114,9 @@
   color: #fff;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
+
 .orderList {
   margin-bottom: 100rpx;
   max-height: 400rpx;
@@ -123,6 +125,8 @@
 .orderItem {
   margin: 0 60rpx;
   height: 96rpx;
+  font-size: 32rpx;
+  color: #333;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,7 +148,7 @@
 }
 
 .orderPay text:nth-child(1) {
-  padding-left: 30rpx;
+  padding-left: 34rpx;
 }
 
 .orderPay view:nth-child(2) {

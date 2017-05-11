@@ -134,12 +134,24 @@ Page({
     console.log(this.data.gather);
   },
   handleShow: function (e) {
-    console.log(e.target.id);
     if (e.target.id == "box" || e.target.id == "cart") {
       this.setData({
         orderShow: !this.data.orderShow
       })
     }
+  },
+  reset: function () {
+    console.log('gag');
+    this.data.menu.forEach((item, index) => {
+      item.list.forEach((ite, idx) => {
+        this.data.menu[index].list[idx].count = 0;
+      })
+    })
+    this.setData({
+      menu: this.data.menu,
+      subMenu: this.data.menu[this.data.activeIdx].list,
+      gather: []
+    });
   },
   onLoad: function () {
     var that = this

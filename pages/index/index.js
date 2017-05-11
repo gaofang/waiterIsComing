@@ -97,17 +97,51 @@ Page({
       }
     ],
     subMenu: null,
-    activeIdx: 0
+    activeIdx: 0,
+    gather: [],
+    orderShow: false
   },
   //事件处理函数
-  chooseClass: function(e) {
+  chooseClass: function (e) {
+    console.log(e.currentTarget.dataset.idx);
     this.setData({
-      subMenu: this.data.menu[e.currentTarget.dataset.index].list,
-      activeIdx: e.currentTarget.dataset.index
+      subMenu: this.data.menu[e.currentTarget.dataset.idx].list,
+      activeIdx: e.currentTarget.dataset.idx
     })
   },
+  add: function (e) {
+    const idx = this.data.activeIdx;
+    const sIdx = e.currentTarget.dataset.subidx;
+    const action = e.currentTarget.dataset.action;
+    let count = 1;
+    if (typeof this.data.menu[idx].list[sIdx].count == "number") {
+      count = this.data.menu[idx].list[sIdx].count + action;
+    }
+    this.data.menu[idx].list[sIdx] = Object.assign({}, this.data.menu[idx].list[sIdx], { count });
+    let gather = [];
+    this.data.menu.forEach(item => {
+      item.list.forEach(ite => {
+        if (ite.count > 0) {        
+          gather.push(ite);
+        }
+      })
+    })
+    this.setData({
+      menu: this.data.menu,
+      subMenu: this.data.menu[idx].list,
+      gather
+    })
+    console.log(this.data.gather);
+  },
+  handleShow: function (e) {
+    console.log(e.target.id);
+    if (e.target.id == "box" || e.target.id == "cart") {
+      this.setData({
+        orderShow: !this.data.orderShow
+      })
+    }
+  },
   onLoad: function () {
-    console.log(this.data.menu[0].list);
     var that = this
     //调用应用实例的方法获取全局数据
     this.setData({

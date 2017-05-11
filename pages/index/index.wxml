@@ -2,76 +2,38 @@
 <view class="container">
   <view class="panel">
     <view class="menu">
-      <text class="menuItem" style="color:{{activeIdx == idx ? '#11c1ae' : '#333'}}" wx:for="{{menu}}" wx:for-index="idx" wx:item="item" bindtap="chooseClass" data-index="{{idx}}">{{item.cuisineName}}</text>
-      <image src="../../img/cart.png" class="cart"></image>
+      <text class="menuItem" style="color:{{activeIdx == idx ? '#11c1ae' : '#333'}}" wx:for="{{menu}}" wx:for-index="idx" wx:item="item" bindtap="chooseClass" data-idx="{{idx}}">{{item.cuisineName}}</text>
+      <image src="../../img/cart.png" class="cart" bindtap="handleShow" id="cart"></image>
+      <view class="badge" wx:if=""></view>
     </view>
     <scroll-view class="submenu" scroll-y>
-      <view class="subItem" wx:for="{{subMenu}}" wx:fo-indexr="index" wx:item="item">
+      <view class="subItem" wx:for="{{subMenu}}" wx:fo-indexr="index" wx:item="item" wx:for-index="subIdx">
         <text class="dishName">{{item.name}}</text>
         <text class="dishPrice">￥{{item.price}}</text>
         <view class="action">
-          <image src="../../img/sub.png"></image>
-          <text class="count">1</text>
-          <image src="../../img/add.png" bindtap=""></image>
+          <image style="visibility:{{item.count > 0 ? 'visible' : 'hidden'}}" src="../../img/sub.png" bindtap="add" data-subidx="{{subIdx}}" data-action="{{-1}}"></image>
+          <text style="visibility:{{item.count > 0 ? 'visible' : 'hidden'}}" class="count">{{item.count}}</text>
+          <image src="{{item.count > 0 ? '../../img/addA.png' : '../../img/add.png'}}" bindtap="add" data-subidx="{{subIdx}}" data-action="{{1}}"></image>
         </view>
       </view>
-      <!--<view class="subItem">
-        <text class="dishName">荠菜猪肉饺子</text>
-        <text class="dishPrice">￥16</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">白菜猪肉饺子</text>
-        <text class="dishPrice">￥14</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">白菜猪肉饺子</text>
-        <text class="dishPrice">￥14</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>
-      <view class="subItem">
-        <text class="dishName">香菇猪肉饺子</text>
-        <text class="dishPrice">￥20</text>
-        <image src="../../img/add.png"></image>
-      </view>-->
     </scroll-view>
   </view>
-  <!--<view class="option"></view>-->
+  <view class="orderBox" wx:if="{{orderShow}}" bindtap="handleShow" id="box">
+    <view class="orderPanel">
+      <view class="orderTitle">
+        <view>已点</view>
+        <view>清空</view>
+      </view>
+      <scroll-view class="orderList" scroll-y>
+        <view class="orderItem" wx:for="{{gather}}" wx:item="item">
+          <text>{{item.name}}</text>
+          <text>{{item.count}}份</text>
+        </view>
+      </scroll-view>
+      <view class="orderPay">
+        <text>¥123.00</text>
+        <view class="orderBtn">提交</view>
+      </view>
+    </view>
+  </view>
 </view>

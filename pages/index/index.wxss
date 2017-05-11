@@ -1,9 +1,11 @@
 /**index.wxss**/
+
 .panel {
   height: 100%;
   background-color: #fff;
   width: 100%;
 }
+
 .menu {
   width: 18%;
   text-align: center;
@@ -17,12 +19,14 @@
   background-color: #fff;
   height: 100%;
 }
+
 .menuItem {
   font-size: 36rpx;
   text-align: center;
   padding: 36rpx 0;
   border-bottom: 1px solid #f1f1f1;
 }
+
 .submenu {
   width: 78%;
   margin-left: 20%;
@@ -32,6 +36,7 @@
   background-color: #fff;
   height: 100%;
 }
+
 .subItem {
   padding: 20rpx 30rpx;
   background-color: #fff;
@@ -40,15 +45,18 @@
   margin: 6rpx 0;
   position: relative;
 }
+
 .subItem .dishName {
   display: block;
   margin-bottom: 36rpx;
   font-size: 34rpx;
 }
+
 .subItem .dishPrice {
   color: chocolate;
   font-size: 32rpx;
 }
+
 .subItem .action {
   width: 140rpx;
   height: 48rpx;
@@ -59,14 +67,17 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .subItem .count {
   font-size: 30rpx;
   color: #333;
 }
+
 .subItem image {
   width: 42rpx;
   height: 42rpx;
 }
+
 .cart {
   position: absolute;
   left: 24rpx;
@@ -75,12 +86,71 @@
   height: 88rpx;
   border-radius: 50%;
   box-shadow: 0 0 10px #999;
+  z-index: 99;
 }
-.option {
+
+.orderBox {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 20rpx;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.orderPanel {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: #fff;
+}
+
+.orderPanel .orderTitle {
+  height: 72rpx;
+  background-color: #11c1ae;
+  display: flex;
+  padding: 0 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderList {
+  margin-bottom: 100rpx;
+  max-height: 400rpx;
+}
+
+.orderItem {
+  margin: 0 60rpx;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.orderPay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #666;
+  font-size: 36rpx;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderPay text:nth-child(1) {
+  padding-left: 30rpx;
+}
+
+.orderPay view:nth-child(2) {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  width: 200rpx;
+  background-color: #11c1ae;
 }
